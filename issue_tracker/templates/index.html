@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block summary %}Home{% endblock %}
+{% block content %}
+    <div class="content">
+        <div class="card-group">
+            {% for issue in issues %}
+                {% include 'partial/issue_card.html' with footer='issues' %}
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+
