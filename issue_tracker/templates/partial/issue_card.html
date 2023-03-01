@@ -2,7 +2,9 @@
     <p class="card-header">Статус: {{ issue.status.title }}</p>
     <div class="card-body">
         <h5 class="card-summary">{{ issue.summary }}</h5>
-        <p class="card-text">Тип: {{ issue.type.title }}</p>
+        {% for tp in issue.type.all %}
+            <p class="card-text">Тип: {{ tp.title }}</p>
+        {% endfor %}
     </div>
     {% if footer == 'issues' %}
         <div class="card-footer border-secondary">
