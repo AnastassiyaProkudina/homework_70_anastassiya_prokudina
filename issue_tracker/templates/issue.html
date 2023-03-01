@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block summary %}issue{% endblock %}
+{% block content %}
+    <div class="content">
+        {% include 'partial/issue_card.html' with footer='issue' %}
+    </div>
+{% endblock %}
+
