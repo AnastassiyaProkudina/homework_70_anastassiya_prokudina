@@ -10,7 +10,7 @@ class IssueAdmin(admin.ModelAdmin):
         "summary",
         "description",
         "status",
-        "type",
+        "type_old",
         "created_at",
         "updated_at",
         "deleted_at",
@@ -21,12 +21,12 @@ class IssueAdmin(admin.ModelAdmin):
         "summary",
         "description",
         "status",
-        "type",
+        "type_old",
         "created_at",
         "deleted_at",
     )
-    search_fields = ("id", "summary", "status", "type")
-    fields = ("summary", "description", "status", "type")
+    search_fields = ("id", "summary", "status", "type_old")
+    fields = ("summary", "description", "status", "type_old")
     readonly_fields = ("id", "created_at", "updated_at", "deleted_at", "is_deleted")
 
 

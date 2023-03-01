@@ -22,7 +22,7 @@ class Issue(models.Model):
         blank=True,
         on_delete=models.PROTECT,
     )
-    type = models.ForeignKey(
+    type_old = models.ForeignKey(
         to="issue_tracker.Type",
         related_name='Тип',
         blank=True,
