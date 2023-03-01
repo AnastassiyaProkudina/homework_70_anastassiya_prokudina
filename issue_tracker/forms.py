@@ -7,9 +7,9 @@ from issue_tracker.models import Issue, Type, Status
 class IssueForm(forms.ModelForm):
     class Meta:
         model = Issue
-        type_old = forms.ModelChoiceField(queryset=Type.objects.all())
+        type = forms.ModelChoiceField(queryset=Type.objects.all())
         status = forms.ModelChoiceField(queryset=Status.objects.all())
-        fields = ["summary", "status", "type_old", "description"]
+        fields = ["summary", "status", "type", "description"]
 
     def clean_summary(self):
         summary = self.cleaned_data.get("summary")

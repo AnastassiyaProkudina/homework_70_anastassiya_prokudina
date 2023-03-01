@@ -10,7 +10,7 @@ class IssueAdmin(admin.ModelAdmin):
         "summary",
         "description",
         "status",
-        "type_old",
+        "get_type",
         "created_at",
         "updated_at",
         "deleted_at",
@@ -21,13 +21,14 @@ class IssueAdmin(admin.ModelAdmin):
         "summary",
         "description",
         "status",
-        "type_old",
-        "created_at",
         "deleted_at",
     )
-    search_fields = ("id", "summary", "status", "type_old")
-    fields = ("summary", "description", "status", "type_old")
+    search_fields = ("id", "summary", "status", "get_type")
+    fields = ("summary", "description", "status", "get_type")
     readonly_fields = ("id", "created_at", "updated_at", "deleted_at", "is_deleted")
+
+    def get_type(self, instance):
+        return [type.name for type in instance.type.all()]
 
 
 class StatusAdmin(admin.ModelAdmin):

@@ -22,11 +22,10 @@ class Issue(models.Model):
         blank=True,
         on_delete=models.PROTECT,
     )
-    type_old = models.ForeignKey(
+    type = models.ManyToManyField(
         to="issue_tracker.Type",
-        related_name='Тип',
+        related_name='issues',
         blank=True,
-        on_delete=models.PROTECT,
     )
     created_at = models.DateTimeField(
         auto_now_add=True,
