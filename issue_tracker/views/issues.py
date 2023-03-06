@@ -68,7 +68,3 @@ class IssueConfirmDeleteView(TemplateView):
         context["issue"].delete()
         return redirect("index")
 
-# class IssueDeleteView(DeleteView):
-#     template_name = "issue_confirm_delete.html"
-#     model = Issue
-#     success_url = reverse_lazy('index')
