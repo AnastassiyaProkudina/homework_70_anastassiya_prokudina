@@ -8,7 +8,7 @@ class IndexView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["issues"] = Issue.objects.exclude(is_deleted=True)
+        context["issues"] = Issue.objects.exclude(is_deleted=True).order_by("-id")
         return context
 
 

@@ -1,6 +1,5 @@
 from django import forms
 from django.core.validators import BaseValidator
-from django.forms import Select
 
 from issue_tracker.models import Issue, Type, Status
 
@@ -35,7 +34,6 @@ class CustomMinLenValidator(BaseValidator):
 
 class IssueForm(forms.ModelForm):
     type = forms.ModelMultipleChoiceField(queryset=Type.objects.all(),
-                                          widget=Select(),
                                           label='Тип',
                                           )
     summary = forms.CharField(validators=(CustomMaxLenValidator(), CustomMinLenValidator()), label="Заголовок")
