@@ -1,6 +1,6 @@
 from django.db.models import Q
 from django.utils.http import urlencode
-from django.views.generic import TemplateView, RedirectView, ListView
+from django.views.generic import RedirectView, ListView
 
 from issue_tracker.forms import SimpleSearchForm
 from issue_tracker.models import Issue

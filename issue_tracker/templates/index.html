@@ -6,15 +6,15 @@
         <div class="card-group">
             {% for issue in issues %}
                 {% include 'partial/issue_card.html' with footer='issues' %}
+            {% empty %}
+                <h2 class="delete-text">Задачи не найдены</h2>
             {% endfor %}
         </div>
-    <div class="paginator-box">
-        {% if is_paginated %}
-            {% include 'partial/pagination.html' %}
-        {% endif %}
+        <div class="paginator-box">
+            {% if is_paginated %}
+                {% include 'partial/pagination.html' %}
+            {% endif %}
+        </div>
     </div>
-    </div>
-
-
 {% endblock %}
 
