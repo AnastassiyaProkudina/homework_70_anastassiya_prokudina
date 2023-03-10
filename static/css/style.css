@@ -73,6 +73,7 @@ body {
     margin-top: 13rem;
     margin-bottom: 1rem;
     color: #242582;
+    justify-content: center;
 }
 
 .text_intro {
@@ -86,8 +87,10 @@ body {
 .content {
     display: flex;
     position: absolute;
-    margin-top: 20rem;
+    margin-top: 24rem;
     flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1140px;
 }
 
 .card-body, .card-header, .card-footer, .card-description {
@@ -116,13 +119,9 @@ body {
 }
 
 .card-size-300 {
-    width: 18rem;
-    min-width: 18rem !important;
-    max-width: 18rem;
-}
-
-.card_footer {
-    background-color: #c5a26e !important;
+    width: 19rem;
+    min-width: 19rem !important;
+    max-width: 19rem;
 }
 
 .delete-text {
@@ -154,4 +153,35 @@ td, .td-style {
 
 .nav-link {
     color: #242582 !important;
+}
+
+.pagination a {
+    display: inline-block;
+    border: solid 1px #F64C72;
+    border-radius: 3px;
+    color: #F64C72;
+    padding: 5px;
+    margin: 10px;
+}
+
+.paginator-text {
+    display: inline-block;
+    color: #F64C72;
+    padding: 5px;
+    margin: 10px;
+}
+.search-box{
+    position: absolute;
+    width: 500px;
+    margin-top: 20rem;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    width: 1170px;
+}
+.paginator-box{
+    justify-content: center;
+    flex-wrap: nowrap;
+    align-items: center;
+    width: 1170px;
 }

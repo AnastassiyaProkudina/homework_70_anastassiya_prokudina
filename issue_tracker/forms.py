@@ -45,3 +45,6 @@ class IssueForm(forms.ModelForm):
         model = Issue
         fields = ["summary", "type", "status", "description"]
 
+
+class SimpleSearchForm(forms.Form):
+    search = forms.CharField(max_length=30, required=False, label="Поиск")
