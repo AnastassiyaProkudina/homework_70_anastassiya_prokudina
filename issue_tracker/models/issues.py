@@ -45,6 +45,12 @@ class Issue(models.Model):
         null=True,
         default=None,
     )
+    project = models.ForeignKey(
+        to="issue_tracker.Project",
+        related_name='Проект',
+        blank=True,
+        on_delete=models.PROTECT,
+    )
 
     def __str__(self):
         return f'id: {self.id}; summary: {self.summary};'
