@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from issue_tracker.models import Issue, Status, Type
+from issue_tracker.models import Issue, Status, Type, Project
 
 
 # Register your models here.
@@ -22,6 +22,14 @@ class TypeAdmin(admin.ModelAdmin):
     fields = ("name", "title")
 
 
+class ProjectAdmin(admin.ModelAdmin):
+    list_display = ("id", "title")
+    list_filter = ("id", "title", "started_at", "finished_at")
+    search_fields = ("id", "title", "started_at", "finished_at")
+    fields = ("id", "title", "started_at", "finished_at", "description")
+
+
 admin.site.register(Issue, IssueAdmin)
 admin.site.register(Status, StatusAdmin)
 admin.site.register(Type, TypeAdmin)
+admin.site.register(Project, ProjectAdmin)
