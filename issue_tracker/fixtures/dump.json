@@ -7,9 +7,10 @@
     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquid blanditiis deserunt dolorum illum impedit ipsum, maxime nihil nobis possimus qui saepe similique tempore temporibus tenetur ut voluptate? Animi autem dolorem eius magni, nam perspiciatis praesentium quisquam sequi! Earum ipsa officia omnis unde velit vero?",
     "status": 1,
     "created_at": "2023-03-01T07:23:50.056Z",
-    "updated_at": "2023-03-01T07:23:50.056Z",
+    "updated_at": "2023-03-10T08:37:15.296Z",
     "is_deleted": false,
     "deleted_at": null,
+    "project": 1,
     "type": [
       3
     ]
@@ -23,9 +24,10 @@
     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquid blanditiis deserunt dolorum illum impedit ipsum, maxime nihil nobis possimus qui saepe similique tempore temporibus tenetur ut voluptate? Animi autem dolorem eius magni, nam perspiciatis praesentium quisquam sequi! Earum ipsa officia omnis unde velit vero?",
     "status": 2,
     "created_at": "2023-03-01T07:24:09.136Z",
-    "updated_at": "2023-03-01T07:24:09.136Z",
+    "updated_at": "2023-03-10T08:37:15.294Z",
     "is_deleted": false,
     "deleted_at": null,
+    "project": 1,
     "type": [
       1
     ]
@@ -39,9 +41,10 @@
     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquid blanditiis deserunt dolorum illum impedit ipsum, maxime nihil nobis possimus qui saepe similique tempore temporibus tenetur ut voluptate? Animi autem dolorem eius magni, nam perspiciatis praesentium quisquam sequi! Earum ipsa officia omnis unde velit vero?",
     "status": 1,
     "created_at": "2023-03-01T07:24:28.956Z",
-    "updated_at": "2023-03-06T06:13:27.083Z",
+    "updated_at": "2023-03-10T08:37:15.293Z",
     "is_deleted": false,
     "deleted_at": null,
+    "project": 1,
     "type": [
       2
     ]
@@ -55,9 +58,10 @@
     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquid blanditiis deserunt dolorum illum impedit ipsum, maxime nihil nobis possimus qui saepe similique tempore temporibus tenetur ut voluptate? Animi autem dolorem eius magni, nam perspiciatis praesentium quisquam sequi! Earum ipsa officia omnis unde velit vero?",
     "status": 1,
     "created_at": "2023-03-01T07:24:44.865Z",
-    "updated_at": "2023-03-01T07:24:44.865Z",
+    "updated_at": "2023-03-10T08:37:15.291Z",
     "is_deleted": false,
     "deleted_at": null,
+    "project": 1,
     "type": [
       3
     ]
@@ -71,9 +75,10 @@
     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquid blanditiis deserunt dolorum illum impedit ipsum, maxime nihil nobis possimus qui saepe similique tempore temporibus tenetur ut voluptate? Animi autem dolorem eius magni, nam perspiciatis praesentium quisquam sequi! Earum ipsa officia omnis unde velit vero?",
     "status": 2,
     "created_at": "2023-03-01T07:25:08.020Z",
-    "updated_at": "2023-03-01T07:25:08.020Z",
+    "updated_at": "2023-03-10T08:37:15.290Z",
     "is_deleted": false,
     "deleted_at": null,
+    "project": 1,
     "type": [
       1
     ]
@@ -87,9 +92,10 @@
     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquid blanditiis deserunt dolorum illum impedit ipsum, maxime nihil nobis possimus qui saepe similique tempore temporibus tenetur ut voluptate? Animi autem dolorem eius magni, nam perspiciatis praesentium quisquam sequi! Earum ipsa officia omnis unde velit vero?",
     "status": 3,
     "created_at": "2023-03-01T07:25:27.126Z",
-    "updated_at": "2023-03-01T07:25:27.126Z",
+    "updated_at": "2023-03-10T08:37:15.256Z",
     "is_deleted": false,
     "deleted_at": null,
+    "project": 1,
     "type": [
       2
     ]
@@ -103,9 +109,10 @@
     "description": "hxfhynnnnnnnnnnnnnnnnnnnnnnnrerwar4awmq5ra,ri6,rudrt4sewtmsyftu,tfurdtesrwsztm",
     "status": 1,
     "created_at": "2023-03-06T01:30:29.889Z",
-    "updated_at": "2023-03-06T01:31:08.075Z",
+    "updated_at": "2023-03-10T08:37:15.161Z",
     "is_deleted": true,
     "deleted_at": "2023-03-06T01:31:08.074Z",
+    "project": 1,
     "type": [
       3
     ]
@@ -119,9 +126,10 @@
     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquid blanditiis deserunt dolorum illum impedit ipsum, maxime nihil nobis possimus qui saepe similique tempore temporibus tenetur ut voluptate? Animi autem dolorem eius magni, nam perspiciatis praesentium quisquam sequi! Earum ipsa officia omnis unde velit vero?",
     "status": 3,
     "created_at": "2023-03-06T11:06:16.533Z",
-    "updated_at": "2023-03-06T22:31:29.871Z",
+    "updated_at": "2023-03-10T08:37:15.260Z",
     "is_deleted": false,
     "deleted_at": null,
+    "project": 1,
     "type": [
       1
     ]
@@ -135,9 +143,10 @@
     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquid blanditiis deserunt dolorum illum impedit ipsum, maxime nihil nobis possimus qui saepe similique tempore temporibus tenetur ut voluptate? Animi autem dolorem eius magni, nam perspiciatis praesentium quisquam sequi! Earum ipsa officia omnis unde velit vero?",
     "status": 1,
     "created_at": "2023-03-07T08:14:04Z",
-    "updated_at": "2023-03-07T08:14:12.366Z",
+    "updated_at": "2023-03-10T08:37:15.206Z",
     "is_deleted": false,
     "deleted_at": null,
+    "project": 1,
     "type": [
       1
     ]
@@ -151,9 +160,10 @@
     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquid blanditiis deserunt dolorum illum impedit ipsum, maxime nihil nobis possimus qui saepe similique tempore temporibus tenetur ut voluptate? Animi autem dolorem eius magni, nam perspiciatis praesentium quisquam sequi! Earum ipsa officia omnis unde velit vero?",
     "status": 2,
     "created_at": "2023-03-07T08:20:58.639Z",
-    "updated_at": "2023-03-07T08:21:01.994Z",
+    "updated_at": "2023-03-10T08:37:15.273Z",
     "is_deleted": false,
     "deleted_at": null,
+    "project": 1,
     "type": [
       2
     ]
@@ -167,9 +177,10 @@
     "description": "Issue with bug",
     "status": 1,
     "created_at": "2023-03-07T08:23:08.879Z",
-    "updated_at": "2023-03-07T08:23:12.963Z",
+    "updated_at": "2023-03-10T08:37:15.270Z",
     "is_deleted": false,
     "deleted_at": null,
+    "project": 1,
     "type": [
       2
     ]
@@ -183,9 +194,10 @@
     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquid blanditiis deserunt dolorum illum impedit ipsum, maxime nihil nobis possimus qui saepe similique tempore temporibus tenetur ut voluptate? Animi autem dolorem eius magni, nam perspiciatis praesentium quisquam sequi! Earum ipsa officia omnis unde velit vero?",
     "status": 1,
     "created_at": "2023-03-07T08:25:46.800Z",
-    "updated_at": "2023-03-07T08:25:48.789Z",
+    "updated_at": "2023-03-10T08:37:15.267Z",
     "is_deleted": false,
     "deleted_at": null,
+    "project": 1,
     "type": [
       1
     ]
@@ -199,9 +211,10 @@
     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquid blanditiis deserunt dolorum illum impedit ipsum, maxime nihil nobis possimus qui saepe similique tempore temporibus tenetur ut voluptate? Animi autem dolorem eius magni, nam perspiciatis praesentium quisquam sequi! Earum ipsa officia omnis unde velit vero?",
     "status": 3,
     "created_at": "2023-03-07T08:27:55.233Z",
-    "updated_at": "2023-03-07T08:27:57.649Z",
+    "updated_at": "2023-03-10T08:37:15.263Z",
     "is_deleted": false,
     "deleted_at": null,
+    "project": 1,
     "type": [
       2
     ]
@@ -215,9 +228,10 @@
     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquid blanditiis deserunt dolorum illum impedit ipsum, maxime nihil nobis possimus qui saepe similique tempore temporibus tenetur ut voluptate? Animi autem dolorem eius magni, nam perspiciatis praesentium quisquam sequi! Earum ipsa officia omnis unde velit vero?",
     "status": 2,
     "created_at": "2023-03-07T02:29:49.434Z",
-    "updated_at": "2023-03-07T02:29:49.435Z",
+    "updated_at": "2023-03-10T08:37:15.284Z",
     "is_deleted": false,
     "deleted_at": null,
+    "project": 1,
     "type": [
       3
     ]
@@ -231,9 +245,10 @@
     "description": " maxime nihil nobis possimus qui saepe similique tempore temporibus tenetur ut voluptate? Animi autem dolorem eius magni",
     "status": 1,
     "created_at": "2023-03-07T08:34:33.988Z",
-    "updated_at": "2023-03-07T08:34:36.525Z",
+    "updated_at": "2023-03-10T08:37:15.200Z",
     "is_deleted": false,
     "deleted_at": null,
+    "project": 1,
     "type": [
       1
     ]
@@ -247,9 +262,10 @@
     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquid blanditiis deserunt dolorum illum impedit ipsum, maxime nihil nobis possimus qui saepe similique tempore temporibus tenetur ut voluptate? Animi autem dolorem eius magni, nam perspiciatis praesentium quisquam sequi! Earum ipsa officia omnis unde velit vero?",
     "status": 1,
     "created_at": "2023-03-07T08:35:56.881Z",
-    "updated_at": "2023-03-07T08:35:59.039Z",
+    "updated_at": "2023-03-10T08:37:15.288Z",
     "is_deleted": false,
     "deleted_at": null,
+    "project": 1,
     "type": [
       3
     ]
@@ -263,9 +279,10 @@
     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquid blanditiis deserunt dolorum illum impedit ipsum, maxime nihil nobis possimus qui saepe similique tempore temporibus tenetur ut voluptate? Animi autem dolorem eius magni, nam perspiciatis praesentium quisquam sequi! Earum ipsa officia omnis unde velit vero?",
     "status": 1,
     "created_at": "2023-03-07T08:37:21.460Z",
-    "updated_at": "2023-03-07T08:37:23.454Z",
+    "updated_at": "2023-03-10T08:37:15.203Z",
     "is_deleted": false,
     "deleted_at": null,
+    "project": 1,
     "type": [
       1
     ]
@@ -279,9 +296,10 @@
     "description": "Issue with bug",
     "status": 2,
     "created_at": "2023-03-06T06:12:26.646Z",
-    "updated_at": "2023-03-06T23:13:48.492Z",
+    "updated_at": "2023-03-10T08:37:15.276Z",
     "is_deleted": false,
     "deleted_at": null,
+    "project": 1,
     "type": [
       2
     ]
@@ -295,9 +313,10 @@
     "description": "Issue with Enhancement\r\nIssue with Enhancement\r\nIssue with Enhancement",
     "status": 3,
     "created_at": "2023-03-07T09:31:21.747Z",
-    "updated_at": "2023-03-07T09:31:21.747Z",
+    "updated_at": "2023-03-10T08:37:15.165Z",
     "is_deleted": false,
     "deleted_at": null,
+    "project": 1,
     "type": [
       2
     ]
@@ -311,9 +330,10 @@
     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquid blanditiis deserunt dolorum illum impedit ipsum, maxime nihil nobis possimus qui saepe similique tempore temporibus tenetur ut voluptate? Animi autem dolorem eius magni, nam perspiciatis praesentium quisquam sequi! Earum ipsa officia omnis unde velit vero?",
     "status": 1,
     "created_at": "2023-03-07T03:00:51.127Z",
-    "updated_at": "2023-03-07T03:00:51.128Z",
+    "updated_at": "2023-03-10T08:37:14.770Z",
     "is_deleted": false,
     "deleted_at": null,
+    "project": 1,
     "type": [
       1
     ]
@@ -327,9 +347,10 @@
     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquid blanditiis deserunt dolorum illum impedit ipsum, maxime nihil nobis possimus qui saepe similique tempore temporibus tenetur ut voluptate? Animi autem dolorem eius magni, nam perspiciatis praesentium quisquam sequi! Earum ipsa officia omnis unde velit vero?",
     "status": 3,
     "created_at": "2023-03-07T03:02:09.805Z",
-    "updated_at": "2023-03-07T03:02:09.805Z",
+    "updated_at": "2023-03-10T08:37:15.280Z",
     "is_deleted": false,
     "deleted_at": null,
+    "project": 1,
     "type": [
       3
     ]
@@ -381,6 +402,16 @@
   "fields": {
     "name": "Enhancement",
     "title": "Улучшение"
+  }
+},
+{
+  "model": "issue_tracker.project",
+  "pk": 1,
+  "fields": {
+    "started_at": "2023-03-10",
+    "finished_at": "2023-03-18",
+    "title": "Проект №1",
+    "description": "\nLorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam aut beatae dolores labore minima praesentium! Ab aliquid dolorem ducimus eveniet, impedit in ipsum omnis perferendis praesentium quae quas quibusdam quo repellat saepe temporibus vero voluptate."
   }
 },
 {
