@@ -27,7 +27,7 @@ class ProjectListView(ListView):
         return None
 
     def get_queryset(self):
-        queryset = super().get_queryset()
+        queryset = super().get_queryset().exclude(is_deleted=True)
         if self.search_value:
             query = Q(title__icontains=self.search_value) | Q(description__icontains=self.search_value)
             queryset = queryset.filter(query)
@@ -70,4 +70,7 @@ class ProjectCreateView(CreateView):
         return reverse('project_detail', kwargs={'pk': self.object.pk})
 
 
-
+class ProjectDeleteView(DeleteView):
+    template_name = 'projects/project_confirm_delete.html'
+    model = Project
+    success_url = reverse_lazy('index')

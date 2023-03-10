@@ -50,6 +50,10 @@ class ProjectForm(forms.ModelForm):
     class Meta:
         model = Project
         fields = ["title", "started_at", "finished_at", "description"]
+        widgets = {
+            "started_at": forms.DateInput(attrs={'type': 'date'}),
+            "finished_at": forms.DateInput(attrs={'type': 'date'})
+        }
 
 
 class SimpleSearchForm(forms.Form):
