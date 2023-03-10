@@ -7,7 +7,7 @@ from issue_tracker.models import Issue
 
 
 class IndexView(ListView):
-    template_name = 'index.html'
+    template_name = 'issues/index.html'
     model = Issue
     context_object_name = 'issues'
     ordering = ('created_at',)

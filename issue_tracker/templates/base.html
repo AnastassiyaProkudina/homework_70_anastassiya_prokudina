@@ -14,10 +14,10 @@
 <header class="header">
     <div class="container">
         <div class="header_inner">
-            <div class="col-md-9">
+            <div class="col-md-6">
                 <a href="{% url 'index' %}" class="header_logo">Issue Tracker</a>
             </div>
-            <div class="menu col-md-3">
+            <div class="menu col-md-6">
                 <ul>
                     <li class="home">
                         <a href="{% url 'index' %}">
@@ -25,7 +25,13 @@
                         </a>
                     </li>
                     <li class="menu">
-                        <a href="{% url 'issue_create' %}" class="nav-link">Добавить +</a>
+                        <a href="{% url 'issue_create' %}" class="nav-link">Добавить задачу</a>
+                    </li>
+                    <li class="menu">
+                        <a href="{% url 'project_list' %}" class="nav-link">Проекты</a>
+                    </li>
+                    <li class="menu">
+                        <a href="{% url 'project_create' %}" class="nav-link">Добавить проект</a>
                     </li>
                 </ul>
             </div>

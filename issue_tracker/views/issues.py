@@ -7,7 +7,7 @@ from issue_tracker.models import Issue
 
 
 class IssueDetail(TemplateView):
-    template_name = "issue.html"
+    template_name = "issues/issue.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -16,7 +16,7 @@ class IssueDetail(TemplateView):
 
 
 class IssueUpdateView(FormView):
-    template_name = "issue_update.html"
+    template_name = "issues/issue_update.html"
     form_class = IssueForm
 
     def dispatch(self, request, *args, **kwargs):
@@ -46,7 +46,7 @@ class IssueUpdateView(FormView):
 
 
 class IssueCreateView(FormView):
-    template_name = "issue_create.html"
+    template_name = "issues/issue_create.html"
     form_class = IssueForm
 
     def form_valid(self, form):
@@ -55,7 +55,7 @@ class IssueCreateView(FormView):
 
 
 class IssueDeleteView(TemplateView):
-    template_name = "issue_confirm_delete.html"
+    template_name = "issues/issue_confirm_delete.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -64,7 +64,7 @@ class IssueDeleteView(TemplateView):
 
 
 class IssueConfirmDeleteView(TemplateView):
-    template_name = "issue_confirm_delete.html"
+    template_name = "issues/issue_confirm_delete.html"
 
     def post(self, request, **kwargs):
         context = super().get_context_data(**kwargs)

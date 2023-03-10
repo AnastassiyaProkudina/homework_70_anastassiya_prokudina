@@ -1,0 +1,19 @@
+<div class="card-size-80 card border-secondary card-shadow m-4">
+    <div class="card-body card-body-project">
+        <h5 class="card-summary">{{ project.title }}</h5>
+        <p class="card-text">Дата начала: {{ project.started_at }}</p>
+    </div>
+    {% if footer == 'projects' %}
+        <div class="card-footer-project card-footer border-secondary">
+            <a href="{% url 'project_detail' project.id %}" class="btn btn-light">Подробнее</a>
+        </div>
+    {% elif footer == 'project' %}
+        <div class="card-description-project card-text">Дата окончания: {{ project.finished_at}}</div>
+        <div class="card-description-project">{{ project.description }}</div>
+
+        <div class="card-style card-footer-project card-footer border-secondary">
+            <a class="btn btn-light" href="{% url 'project_update' project.id %}" role="button">Изменить</a>
+        </div>
+    {% endif %}
+</div>
+

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block summary %}Project{% endblock %}
+{% block content %}
+    <div class="content">
+        {% include 'partial/project_card.html' with footer='project' %}
+        <div class="card-group">
+            {% for issue in issues %}
+                {% include 'partial/issue_card.html' with footer='issues' %}
+            {% empty %}
+                <h2 class="delete-text">Задачи не найдены</h2>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+

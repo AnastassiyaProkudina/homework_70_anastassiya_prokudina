@@ -24,4 +24,4 @@ class Project(models.Model):
     )
 
     def __str__(self):
-        return f'title: {self.title};'
+        return self.title

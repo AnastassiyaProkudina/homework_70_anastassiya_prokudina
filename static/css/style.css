@@ -97,18 +97,21 @@ body {
     background-color: #553D67 !important;
     color: inherit;
 }
-
+.card-body-project, .card-header-project, .card-footer-project, .card-description-project {
+    background-color: #5874b0 !important;
+    color: inherit;
+}
 .card-text {
     font-size: 14px;
     font-style: italic;
 }
 
-.card-description {
+.card-description, .card-description-project{
     padding: 1rem 1rem;
     margin-top: -1rem;
 }
 
-.card-header {
+.card-header, .card-header-project {
     color: #F64C72 !important;
 }
 
@@ -124,6 +127,11 @@ body {
     max-width: 19rem;
 }
 
+.card-size-80 {
+    width: 80%;
+    min-width: 50% !important;
+    max-width: 80%;
+}
 .delete-text {
     margin-top: 40px;
     color: #F64C72 !important;

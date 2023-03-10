@@ -1,7 +1,7 @@
 from django import forms
 from django.core.validators import BaseValidator
 
-from issue_tracker.models import Issue, Type, Status
+from issue_tracker.models import Issue, Type, Status, Project
 
 
 class CustomMaxLenValidator(BaseValidator):
@@ -43,7 +43,13 @@ class IssueForm(forms.ModelForm):
 
     class Meta:
         model = Issue
-        fields = ["summary", "type", "status", "description"]
+        fields = ["summary", "type", "status", "project", "description"]
+
+
+class ProjectForm(forms.ModelForm):
+    class Meta:
+        model = Project
+        fields = ["title", "started_at", "finished_at", "description"]
 
 
 class SimpleSearchForm(forms.Form):
