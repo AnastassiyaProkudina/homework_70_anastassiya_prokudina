@@ -7,7 +7,7 @@ from issue_tracker.models import Issue, Type, Status, Project
 class CustomMaxLenValidator(BaseValidator):
     def __init__(self, limit_value=30):
         self.limit_value = limit_value
-        message = 'Максимальная длина заголовка задачи %(limit_value)s. Вы ввели %(show_value)s символов.'
+        message = "Максимальная длина заголовка задачи %(limit_value)s. Вы ввели %(show_value)s символов."
         super().__init__(limit_value=limit_value, message=message)
 
     def compare(self, value, limit_value):
@@ -33,13 +33,15 @@ class CustomMinLenValidator(BaseValidator):
 
 
 class IssueForm(forms.ModelForm):
-    type = forms.ModelMultipleChoiceField(queryset=Type.objects.all(),
-                                          label='Тип',
-                                          )
-    summary = forms.CharField(validators=(CustomMaxLenValidator(), CustomMinLenValidator()), label="Заголовок")
+    type = forms.ModelMultipleChoiceField(
+        queryset=Type.objects.all(),
+        label="Тип",
+    )
+    summary = forms.CharField(
+        validators=(CustomMaxLenValidator(), CustomMinLenValidator()), label="Заголовок"
+    )
 
-    status = forms.ModelChoiceField(queryset=Status.objects.all(),
-                                    label="Статус")
+    status = forms.ModelChoiceField(queryset=Status.objects.all(), label="Статус")
 
     class Meta:
         model = Issue
@@ -51,10 +53,26 @@ class ProjectForm(forms.ModelForm):
         model = Project
         fields = ["title", "started_at", "finished_at", "description"]
         widgets = {
-            "started_at": forms.DateInput(attrs={'type': 'date'}),
-            "finished_at": forms.DateInput(attrs={'type': 'date'})
+            "started_at": forms.DateInput(attrs={"type": "date"}),
+            "finished_at": forms.DateInput(attrs={"type": "date"}),
         }
 
 
 class SimpleSearchForm(forms.Form):
     search = forms.CharField(max_length=30, required=False, label="Поиск")
+
+
+class ProjectIssueForm(forms.ModelForm):
+    type = forms.ModelMultipleChoiceField(
+        queryset=Type.objects.all(),
+        label="Тип",
+    )
+    summary = forms.CharField(
+        validators=(CustomMaxLenValidator(), CustomMinLenValidator()), label="Заголовок"
+    )
+
+    status = forms.ModelChoiceField(queryset=Status.objects.all(), label="Статус")
+
+    class Meta:
+        model = Issue
+        fields = ["summary", "type", "status", "description"]

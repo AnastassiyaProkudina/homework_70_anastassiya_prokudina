@@ -18,13 +18,13 @@ class Issue(models.Model):
     )
     status = models.ForeignKey(
         to="issue_tracker.Status",
-        related_name='Статус',
+        related_name="Статус",
         blank=True,
         on_delete=models.PROTECT,
     )
     type = models.ManyToManyField(
         to="issue_tracker.Type",
-        related_name='issues',
+        related_name="issues",
         blank=True,
     )
     created_at = models.DateTimeField(
@@ -47,13 +47,13 @@ class Issue(models.Model):
     )
     project = models.ForeignKey(
         to="issue_tracker.Project",
-        related_name='Проект',
+        related_name="Проект",
         blank=True,
         on_delete=models.PROTECT,
     )
 
     def __str__(self):
-        return f'id: {self.id}; summary: {self.summary};'
+        return f"id: {self.id}; summary: {self.summary};"
 
     def delete(self, using=None, keep_parents=False):
         self.is_deleted = True

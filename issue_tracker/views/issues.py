@@ -1,69 +1,48 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import redirect, get_object_or_404
-from django.urls import reverse
-from django.views.generic import TemplateView, FormView
+from django.urls import reverse, reverse_lazy
+from django.views.generic import (
+    TemplateView,
+    DetailView,
+    CreateView,
+    UpdateView,
+    DeleteView,
+)
 
-from issue_tracker.forms import IssueForm
-from issue_tracker.models import Issue
+from issue_tracker.forms import IssueForm, ProjectIssueForm
+from issue_tracker.models import Issue, Project
 
 
-class IssueDetail(TemplateView):
+class IssueDetail(DetailView):
     template_name = "issues/issue.html"
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["issue"] = get_object_or_404(Issue, pk=kwargs["pk"])
-        return context
+    model = Issue
 
 
-class IssueUpdateView(FormView):
+class IssueUpdateView(LoginRequiredMixin, UpdateView):
     template_name = "issues/issue_update.html"
     form_class = IssueForm
-
-    def dispatch(self, request, *args, **kwargs):
-        self.issue = self.get_object()
-        return super().dispatch(request, *args, **kwargs)
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['issue'] = self.issue
-        return context
-
-    def get_form_kwargs(self):
-        kwargs = super().get_form_kwargs()
-        kwargs['instance'] = self.issue
-        return kwargs
-
-    def form_valid(self, form):
-        self.issue = form.save()
-        return super().form_valid(form)
+    model = Issue
 
     def get_success_url(self):
-        return reverse('issue_detail', kwargs={'pk': self.issue.pk})
-
-    def get_object(self):
-        pk = self.kwargs.get('pk')
-        return get_object_or_404(Issue, pk=pk)
+        return reverse("issue_detail", kwargs={"pk": self.object.pk})
 
 
-class IssueCreateView(FormView):
+class IssueCreateView(LoginRequiredMixin, CreateView):
     template_name = "issues/issue_create.html"
+    model = Issue
     form_class = IssueForm
 
-    def form_valid(self, form):
-        issue = form.save()
-        return redirect("issue_detail", pk=issue.pk)
+    def get_success_url(self):
+        return reverse("issue_detail", kwargs={"pk": self.object.pk})
 
 
-class IssueDeleteView(TemplateView):
+class IssueDeleteView(LoginRequiredMixin, DeleteView):
     template_name = "issues/issue_confirm_delete.html"
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["issue"] = get_object_or_404(Issue, pk=kwargs["pk"])
-        return context
+    model = Issue
+    success_url = reverse_lazy("index")
 
 
-class IssueConfirmDeleteView(TemplateView):
+class IssueConfirmDeleteView(LoginRequiredMixin, TemplateView):
     template_name = "issues/issue_confirm_delete.html"
 
     def post(self, request, **kwargs):
@@ -71,3 +50,17 @@ class IssueConfirmDeleteView(TemplateView):
         context["issue"] = get_object_or_404(Issue, pk=kwargs["pk"])
         context["issue"].delete()
         return redirect("index")
+
+
+class ProjectIssueCreateView(LoginRequiredMixin, CreateView):
+    model = Issue
+    form_class = ProjectIssueForm
+    template_name = "issues/project_issue_create.html"
+
+    def form_valid(self, form):
+        project = get_object_or_404(Project, pk=self.kwargs.get("pk"))
+        print(f"project {project}")
+        issue = form.save(commit=False)
+        issue.project = project
+        issue.save()
+        return redirect("project_detail", pk=project.pk)

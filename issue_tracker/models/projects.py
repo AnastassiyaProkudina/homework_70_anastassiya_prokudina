@@ -3,19 +3,10 @@ from django.utils import timezone
 
 
 class Project(models.Model):
-    started_at = models.DateField(
-        verbose_name="Дата начала"
-    )
-    finished_at = models.DateField(
-        verbose_name="Дата окончания",
-        blank=True,
-        null=True
-    )
+    started_at = models.DateField(verbose_name="Дата начала")
+    finished_at = models.DateField(verbose_name="Дата окончания", blank=True, null=True)
     title = models.CharField(
-        max_length=200,
-        verbose_name="Название",
-        blank=False,
-        null=False
+        max_length=200, verbose_name="Название", blank=False, null=False
     )
     description = models.TextField(
         max_length=3000,

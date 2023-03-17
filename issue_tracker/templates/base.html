@@ -8,31 +8,51 @@
           integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&family=Roboto+Flex:opsz,wght@8..144,300;8..144,400;8..144,500;8..144,600&family=Roboto+Serif:opsz,wght@8..144,100;8..144,300;8..144,400;8..144,500;8..144,700&family=Roboto:ital,wght@0,100;0,500;0,700;1,300&display=swap"
           rel="stylesheet">
-    <summary>{% block summary %}Blog{% endblock %}</summary>
+    <title>{% block title %}Blog{% endblock %}</title>
 </head>
 <body>
 <header class="header">
     <div class="container">
-        <div class="header_inner">
-            <div class="col-md-6">
+        <div class="header-inner">
+            <div class="menu col-md-12">
+                <ul>
+                    {% if user.is_authenticated %}
+                        <li class="menu-greet"> Привет, {{ user.username }}</li>
+                        <li class="menu-greet">
+                            <form action="{% url 'logout' %}" method="post">
+                                {% csrf_token %}
+                                <input type="submit" class="btn btn-outline-light" value="Выйти">
+                            </form>
+                        </li>
+                    {% else %}
+                        <li class="menu">
+                            <a href="{% url 'login' %}" class="btn btn-outline-light">Войти</a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+        <div class="header-inner">
+            <div class="col-md-3">
                 <a href="{% url 'index' %}" class="header_logo">Issue Tracker</a>
             </div>
-            <div class="menu col-md-6">
+            <div class="menu col-md-9">
                 <ul>
-                    <li class="home">
-                        <a href="{% url 'index' %}">
-                            <iconify-icon icon="fa:home" style="color: #242582;"></iconify-icon>
-                        </a>
-                    </li>
-                    <li class="menu">
-                        <a href="{% url 'issue_create' %}" class="nav-link">Добавить задачу</a>
+                    <li class="home"><a href="{% url 'index' %}">
+                        <iconify-icon icon="fa:home" style="color: #242582;"></iconify-icon>
+                    </a>
                     </li>
                     <li class="menu">
                         <a href="{% url 'project_list' %}" class="nav-link">Проекты</a>
                     </li>
-                    <li class="menu">
-                        <a href="{% url 'project_create' %}" class="nav-link">Добавить проект</a>
-                    </li>
+                    {% if user.is_authenticated %}
+                        <li class="menu">
+                            <a href="{% url 'project_create' %}" class="nav-link">Добавить проект</a>
+                        </li>
+                        <li class="menu">
+                            <a href="{% url 'issue_create' %}" class="nav-link">Добавить задачу</a>
+                        </li>
+                    {% endif %}
                 </ul>
             </div>
         </div>

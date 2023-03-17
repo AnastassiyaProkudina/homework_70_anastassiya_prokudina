@@ -10,18 +10,24 @@
     {% elif footer == 'project' %}
         <div class="card-description-project card-text">Дата окончания: {{ project.finished_at }}</div>
         <div class="card-description-project">{{ project.description }}</div>
-        <div class="card-style card-footer-project card-footer border-secondary">
-            <a class="btn btn-light" href="{% url 'project_update' project.id %}" role="button">Изменить</a>
-            <a class="btn btn-dark" href="{% url 'project_delete' project.id %}" role="button">Удалить</a>
-        </div>
+        {% if user.is_authenticated %}
+            <div class="card-style card-footer-project card-footer border-secondary">
+                <a class="btn btn-light" href="{% url 'project_update' project.id %}" role="button">Изменить</a>
+                <a class="btn btn-dark" href="{% url 'project_delete' project.id %}" role="button">Удалить</a>
+                <a class="btn btn-dark" href="{% url 'project_issue_create' project.pk %}">Добавить задачу</a>
+            </div>
+        {% endif %}
     {% elif footer == 'delete' %}
-        <div class="card-style card-footer-project card-footer border-secondary">
-            <form action="{% url 'project_confirm_delete' project.pk %}" method="post">
-                {% csrf_token %}
-                <input type="submit" class="btn btn-dark" value="Удалить">
-                <a href="{% url 'project_list' %}" class="btn btn-light">Отмена</a>
-            </form>
-        </div>
+        {% if user.is_authenticated %}
+            <div class="card-style card-footer-project card-footer border-secondary">
+
+                <form action="{% url 'project_confirm_delete' project.pk %}" method="post">
+                    {% csrf_token %}
+                    <input type="submit" class="btn btn-dark" value="Удалить">
+                    <a href="{% url 'project_list' %}" class="btn btn-light">Отмена</a>
+                </form>
+            </div>
+        {% endif %}
     {% endif %}
 </div>
 
