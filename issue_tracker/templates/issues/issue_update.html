@@ -4,7 +4,7 @@
     <div class="form-box">
         <h1>Редактировать</h1>
         <div class="form">
-            <form action="{% url 'issue_update' issue.id %}" method="post">
+            <form action="{% url 'issue_tracker:issue_update' issue.id %}" method="post">
                 {% include 'partial/issue_form.html' with button_text='Изменить' %}
             </form>
         </div>

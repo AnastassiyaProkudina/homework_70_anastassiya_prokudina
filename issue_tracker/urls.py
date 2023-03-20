@@ -17,6 +17,8 @@ from issue_tracker.views.projects import (
     ProjectDeleteView,
 )
 
+app_name = 'issue_tracker'
+
 urlpatterns = [
     path("", IndexView.as_view(), name="index"),
     path("issue/", IndexRedirectView.as_view(), name="issues_index_redirect"),

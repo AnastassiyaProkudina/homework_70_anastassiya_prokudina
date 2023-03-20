@@ -8,23 +8,23 @@
     </div>
     {% if footer == 'issues' %}
         <div class="card-footer border-secondary">
-            <a href="{% url 'issue_detail' issue.id %}" class="btn btn-light">Подробнее</a>
+            <a href="{% url 'issue_tracker:issue_detail' issue.id %}" class="btn btn-light">Подробнее</a>
         </div>
     {% elif footer == 'issue' %}
         <div class="card-description">{{ issue.description }}</div>
         {% if user.is_authenticated %}
             <div class="card-style card-footer border-secondary">
-                <a class="btn btn-light" href="{% url 'issue_update' issue.id %}" role="button">Изменить</a>
-                <a class="btn btn-dark" href="{% url 'issue_delete' issue.pk %}" role="button">Удалить</a>
+                <a class="btn btn-light" href="{% url 'issue_tracker:issue_update' issue.id %}" role="button">Изменить</a>
+                <a class="btn btn-dark" href="{% url 'issue_tracker:issue_delete' issue.pk %}" role="button">Удалить</a>
             </div>
         {% endif %}
     {% elif footer == 'delete' %}
         {% if user.is_authenticated %}
             <div class="card-style card-footer border-secondary">
-                <form action="{% url 'issue_confirm_delete' issue.pk %}" method="post">
+                <form action="{% url 'issue_tracker:issue_confirm_delete' issue.pk %}" method="post">
                     {% csrf_token %}
                     <input type="submit" class="btn btn-dark" value="Удалить">
-                    <a href="{% url 'index' %}" class="btn btn-light">Отмена</a>
+                    <a href="{% url 'issue_tracker:index' %}" class="btn btn-light">Отмена</a>
                 </form>
             </div>
         {% endif %}
