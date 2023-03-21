@@ -28,8 +28,8 @@
                         </li>
                     {% else %}
                         <li class="menu">
-                            <a href="{% url 'accounts:login' %}?next={{ request.get_full_path }}" class="btn btn-outline-light">Войти</a>
-                            <a href="{% url 'accounts:register' %}?next={{ request.get_full_path }}" class="btn btn-outline-light">Зарегестрироваться</a>
+                            <a href="{% url 'accounts:login' %}" class="btn btn-outline-light">Войти</a>
+                            <a href="{% url 'accounts:register' %}" class="btn btn-outline-light">Зарегестрироваться</a>
                         </li>
                     {% endif %}
                 </ul>

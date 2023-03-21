@@ -3,7 +3,6 @@ from django.contrib.auth.models import User
 from django.core.validators import BaseValidator
 
 from issue_tracker.models import Issue, Type, Status, Project, UserProjects
-from issue_tracker.querysets import CustomBaseQuerySet
 
 
 class CustomMaxLenValidator(BaseValidator):
@@ -83,7 +82,7 @@ class ProjectIssueForm(forms.ModelForm):
 class UserProjectsForm(forms.ModelForm):
     user = forms.ModelChoiceField(queryset=User.objects.all(),
                                   required=True, label='Выберете пользователя проекта')
+
     class Meta:
         model = UserProjects
         fields = ["user"]
-

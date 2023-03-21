@@ -495,39 +495,19 @@
   }
 },
 {
-  "model": "auth.user",
-  "pk": 1,
+  "model": "issue_tracker.userprojects",
+  "pk": 10,
   "fields": {
-    "password": "pbkdf2_sha256$390000$NF5rggcZHeA7EWhaGFKGtW$E+Wu3GJZJVOAh8j05OmVmXjv9UVGyFs5nsid2Q08G4A=",
-    "last_login": "2023-03-07T02:39:34.167Z",
-    "is_superuser": true,
-    "username": "admin",
-    "first_name": "",
-    "last_name": "",
-    "email": "",
-    "is_staff": true,
-    "is_active": true,
-    "date_joined": "2023-03-01T07:16:39.585Z",
-    "groups": [],
-    "user_permissions": []
+    "user": 4,
+    "project": 1
   }
 },
 {
-  "model": "auth.user",
-  "pk": 2,
+  "model": "issue_tracker.userprojects",
+  "pk": 11,
   "fields": {
-    "password": "pbkdf2_sha256$390000$1comM2iz6X5YeLWLaUe4EP$+YEnCJNa9En7cWaQbynyYptq77Uta6yVRaOnULjPgo0=",
-    "last_login": "2023-03-17T06:28:03.155Z",
-    "is_superuser": true,
-    "username": "root",
-    "first_name": "",
-    "last_name": "",
-    "email": "",
-    "is_staff": true,
-    "is_active": true,
-    "date_joined": "2023-03-16T22:12:28.669Z",
-    "groups": [],
-    "user_permissions": []
+    "user": 3,
+    "project": 1
   }
 }
 ]
