@@ -21,15 +21,15 @@
                     {% if user.is_authenticated %}
                         <li class="menu-greet"> Привет, {{ user.username }}</li>
                         <li class="menu-greet">
-                            <form action="{% url 'accounts:logout' %}" method="post">
+                            <form action="{% url 'accounts:logout' %}?next={{ request.get_full_path }}" method="post">
                                 {% csrf_token %}
                                 <input type="submit" class="btn btn-outline-light" value="Выйти">
                             </form>
                         </li>
                     {% else %}
                         <li class="menu">
-                            <a href="{% url 'accounts:login' %}" class="btn btn-outline-light">Войти</a>
-                            <a href="{% url 'accounts:register' %}" class="btn btn-outline-light">Зарегестрироваться</a>
+                            <a href="{% url 'accounts:login' %}?next={{ request.get_full_path }}" class="btn btn-outline-light">Войти</a>
+                            <a href="{% url 'accounts:register' %}?next={{ request.get_full_path }}" class="btn btn-outline-light">Зарегестрироваться</a>
                         </li>
                     {% endif %}
                 </ul>

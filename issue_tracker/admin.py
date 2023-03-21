@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from issue_tracker.models import Issue, Status, Type, Project
+from issue_tracker.models import Issue, Status, Type, Project, UserProjects
 
 
 # Register your models here.
@@ -33,3 +33,4 @@ admin.site.register(Issue, IssueAdmin)
 admin.site.register(Status, StatusAdmin)
 admin.site.register(Type, TypeAdmin)
 admin.site.register(Project, ProjectAdmin)
+admin.site.register(UserProjects)

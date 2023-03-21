@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}User add to Project{% endblock %}
+{% block content %}
+    <div class="form-box">
+        <h1>Удалить пользователя проекта</h1>
+        <div class="form">
+            <form method="post">
+{#                {% csrf_token %}#}
+{#                <div class="form_row">#}
+{#                    {% for user_ in project.users.all %}#}
+{#                        <label>#}
+{#                            <input type="checkbox" name="{{ user_.id }}">{{ user_.username }}#}
+{#                        </label>#}
+{#                    {% empty %}#}
+{#                        нет#}
+{#                    {% endfor %}#}
+{#                    <input type="submit" class="btn btn-light" value="Удалить">#}
+{#                </div>#}
+                                {% include 'partial/form.html' with button_text='Удалить'%}
+            </form>
+        </div>
+    </div>
+{% endblock %}

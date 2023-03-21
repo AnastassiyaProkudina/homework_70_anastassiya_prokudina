@@ -14,7 +14,7 @@ from issue_tracker.views.projects import (
     ProjectDetail,
     ProjectUpdateView,
     ProjectCreateView,
-    ProjectDeleteView,
+    ProjectDeleteView, ProjectUserAddView, ProjectUserDeleteView,
 )
 
 app_name = 'issue_tracker'
@@ -49,5 +49,15 @@ urlpatterns = [
         "project/<int:pk>/issues/add/",
         ProjectIssueCreateView.as_view(),
         name="project_issue_create",
+    ),
+    path(
+        "project/<int:pk>/user/add/",
+        ProjectUserAddView.as_view(),
+        name="project_user_add",
+    ),
+    path(
+        "project/<int:pk>/user/delete/",
+        ProjectUserDeleteView.as_view(),
+        name="project_user_delete",
     ),
 ]

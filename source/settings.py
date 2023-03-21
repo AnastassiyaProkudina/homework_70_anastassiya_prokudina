@@ -35,7 +35,6 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    # "debug_toolbar",
     "django_bootstrap5",
     "issue_tracker",
     "accounts",
@@ -46,7 +45,6 @@ MIDDLEWARE = [
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
-    # "debug_toolbar.middleware.DebugToolbarMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
@@ -121,9 +119,9 @@ USE_TZ = True
 STATIC_URL = "/static/"
 STATICFILES_DIRS = [BASE_DIR / "static"]
 
-LOGIN_REDIRECT_URL = "index"
-LOGOUT_REDIRECT_URL = "index"
-LOGIN_URL = "login"
+LOGIN_REDIRECT_URL = "issue_tacker:index"
+LOGOUT_REDIRECT_URL = "issue_tacker:index"
+LOGIN_URL = "accounts:login"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 

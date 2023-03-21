@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 from django.utils import timezone
 
@@ -23,6 +24,11 @@ class Project(models.Model):
         verbose_name="Дата и время удаления",
         null=True,
         default=None,
+    )
+    users = models.ManyToManyField(
+        through='issue_tracker.UserProjects',
+        to=User,
+        related_name='users_projects'
     )
 
     def __str__(self):

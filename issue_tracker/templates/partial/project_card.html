@@ -10,11 +10,20 @@
     {% elif footer == 'project' %}
         <div class="card-description-project card-text">Дата окончания: {{ project.finished_at }}</div>
         <div class="card-description-project">{{ project.description }}</div>
+        <div class="card-description-project card-text">Пользователи проекта:
+        {% for user_ in project.users.all %}
+            {{ user_.username }} ,
+        {% empty %}
+            нет
+        {% endfor %}
+        </div>
         {% if user.is_authenticated %}
             <div class="card-style card-footer-project card-footer border-secondary">
                 <a class="btn btn-light" href="{% url 'issue_tracker:project_update' project.id %}" role="button">Изменить</a>
                 <a class="btn btn-dark" href="{% url 'issue_tracker:project_delete' project.id %}" role="button">Удалить</a>
-                <a class="btn btn-dark" href="{% url 'issue_tracker:project_issue_create' project.pk %}">Добавить задачу</a>
+                <a class="btn btn-secondary" href="{% url 'issue_tracker:project_issue_create' project.pk %}">Добавить задачу</a>
+                <a class="btn btn-secondary" href="{% url 'issue_tracker:project_user_add' project.pk %}">Добавить пользователя</a>
+                <a class="btn btn-secondary" href="{% url 'issue_tracker:project_user_delete' project.pk %}">Удалить пользователя</a>
             </div>
         {% endif %}
     {% elif footer == 'delete' %}

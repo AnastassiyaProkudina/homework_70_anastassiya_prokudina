@@ -1,5 +1,6 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import Q
+from django.shortcuts import get_object_or_404, redirect
 from django.urls import reverse, reverse_lazy
 from django.utils.http import urlencode
 from django.views.generic import (
@@ -10,8 +11,8 @@ from django.views.generic import (
     DeleteView,
 )
 
-from issue_tracker.forms import SimpleSearchForm, ProjectForm
-from issue_tracker.models import Project, Issue
+from issue_tracker.forms import SimpleSearchForm, ProjectForm, UserProjectsForm
+from issue_tracker.models import Project, Issue, UserProjects
 
 
 class ProjectListView(ListView):
@@ -67,7 +68,7 @@ class ProjectUpdateView(LoginRequiredMixin, UpdateView):
     model = Project
 
     def get_success_url(self):
-        return reverse("project_detail", kwargs={"pk": self.object.pk})
+        return reverse("issue_tracker:project_detail", kwargs={"pk": self.object.pk})
 
 
 class ProjectCreateView(LoginRequiredMixin, CreateView):
@@ -76,10 +77,37 @@ class ProjectCreateView(LoginRequiredMixin, CreateView):
     form_class = ProjectForm
 
     def get_success_url(self):
-        return reverse("project_detail", kwargs={"pk": self.object.pk})
+        return reverse("issue_tracker:project_detail", kwargs={"pk": self.object.pk})
 
 
 class ProjectDeleteView(LoginRequiredMixin, DeleteView):
     template_name = "projects/project_confirm_delete.html"
     model = Project
-    success_url = reverse_lazy("index")
+    success_url = reverse_lazy("issue_tracker:index")
+
+
+class ProjectUserAddView(LoginRequiredMixin, CreateView):
+    model = UserProjects
+    form_class = UserProjectsForm
+    template_name = "projects/project_add_user.html"
+
+    def form_valid(self, form):
+        project = get_object_or_404(Project, pk=self.kwargs.get("pk"))
+        object = form.save(commit=False)
+        object.project = project
+        object.save()
+        form.save_m2m()
+        return redirect("issue_tracker:project_detail", pk=project.pk)
+
+
+class ProjectUserDeleteView(LoginRequiredMixin, DeleteView):
+    template_name = "projects/project_delete_user.html"
+    model = Project
+    form_class = UserProjectsForm
+    confirm_delete = False
+
+    def form_valid(self, form):
+        project = get_object_or_404(Project, pk=self.object.pk)
+        obj = form.save(commit=False)
+        project.users.remove(obj.user)
+        return redirect("issue_tracker:project_detail", pk=self.object.pk)

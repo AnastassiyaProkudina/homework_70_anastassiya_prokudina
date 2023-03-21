@@ -5,7 +5,7 @@
         <h1>Редактировать</h1>
         <div class="form">
             <form action="{% url 'issue_tracker:project_update' project.id %}" method="post">
-                {% include 'partial/issue_form.html' with button_text='Изменить' %}
+                {% include 'partial/form.html' with button_text='Изменить' %}
             </form>
         </div>
     </div>
