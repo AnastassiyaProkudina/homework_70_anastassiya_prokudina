@@ -33,3 +33,16 @@ class ProjectUpdateAPIView(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class ProjectDeleteAPIView(APIView):
+    def get(self, request, *args, **kwargs):
+        obj = Project.objects.get(pk=kwargs.get("pk"))
+        serializer = ProjectsSerializer(obj)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+    def delete(self, request, *args, **kwargs):
+        obj = Project.objects.get(pk=kwargs.get("pk"))
+        obj.delete()
+        serializer = ProjectsSerializer(obj)
+        return Response(f"Вы удалили проект с ключом - {serializer.data['id']}", status=status.HTTP_200_OK)
