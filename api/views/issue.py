@@ -18,3 +18,18 @@ class IssueDetailAPIView(APIView):
         obj = Issue.objects.get(pk=kwargs.get("pk"))
         serializer = IssuesSerializer(obj)
         return Response(serializer.data, status=status.HTTP_200_OK)
+
+
+class IssueUpdateAPIView(APIView):
+    def get(self, request, *args, **kwargs):
+        obj = Issue.objects.get(pk=kwargs.get("pk"))
+        serializer = IssuesSerializer(obj)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+    def put(self, request, *args, **kwargs):
+        obj = Issue.objects.get(pk=kwargs.get("pk"))
+        serializer = IssuesSerializer(obj, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
