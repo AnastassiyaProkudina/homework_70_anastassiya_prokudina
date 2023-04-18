@@ -47,9 +47,9 @@ class Issue(models.Model):
     )
     project = models.ForeignKey(
         to="issue_tracker.Project",
-        related_name="Проект",
+        related_name="issues",
         blank=True,
-        on_delete=models.PROTECT,
+        on_delete=models.CASCADE,
     )
 
     def __str__(self):

@@ -7,13 +7,6 @@ body {
     box-sizing: border-box;
 }
 
-.container {
-    /*margin: 0 auto;*/
-    /*!*min-width: 980px;*!*/
-    /*max-width: 1170px;*/
-    /*z-index: 1;*/
-}
-
 .header {
     position: absolute;
     width: 100%;
@@ -75,7 +68,7 @@ body {
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 6px;
-    margin-top: 13rem;
+    margin-top: 19%;
     margin-bottom: 1rem;
     color: #242582;
     justify-content: center;
@@ -145,7 +138,7 @@ body {
 .form-box {
     width: 500px;
     position: absolute;
-    margin: 26rem 20rem;
+    margin: 26rem 5%;
     background-color: #553D67;
     padding: 30px;
     text-align: justify-all;

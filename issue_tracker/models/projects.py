@@ -26,9 +26,7 @@ class Project(models.Model):
         default=None,
     )
     users = models.ManyToManyField(
-        through='issue_tracker.UserProjects',
-        to=User,
-        related_name='users_projects'
+        through="issue_tracker.UserProjects", to=User, related_name="users_projects"
     )
 
     def __str__(self):

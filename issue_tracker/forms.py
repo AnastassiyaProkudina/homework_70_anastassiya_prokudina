@@ -80,8 +80,11 @@ class ProjectIssueForm(forms.ModelForm):
 
 
 class UserProjectsForm(forms.ModelForm):
-    user = forms.ModelChoiceField(queryset=User.objects.all(),
-                                  required=True, label='Выберете пользователя проекта')
+    user = forms.ModelChoiceField(
+        queryset=User.objects.all(),
+        required=True,
+        label="Выберете пользователя проекта",
+    )
 
     class Meta:
         model = UserProjects

@@ -14,10 +14,12 @@ from issue_tracker.views.projects import (
     ProjectDetail,
     ProjectUpdateView,
     ProjectCreateView,
-    ProjectDeleteView, ProjectUserAddView, ProjectUserDeleteView,
+    ProjectDeleteView,
+    ProjectUserAddView,
+    ProjectUserDeleteView,
 )
 
-app_name = 'issue_tracker'
+app_name = "issue_tracker"
 
 urlpatterns = [
     path("", IndexView.as_view(), name="index"),

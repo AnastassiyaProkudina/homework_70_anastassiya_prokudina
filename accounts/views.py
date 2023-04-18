@@ -7,42 +7,42 @@ from accounts.forms import LoginForm, CustomUserCreationForm
 
 
 class LoginView(TemplateView):
-    template_name = 'login.html'
+    template_name = "login.html"
     form = LoginForm
 
     def get(self, request, *args, **kwargs):
         form = self.form()
-        context = {'form': form}
+        context = {"form": form}
         return self.render_to_response(context)
 
     def post(self, request, *args, **kwargs):
         form = self.form(request.POST)
         if not form.is_valid():
-            messages.error(request, 'Некорректная форма')
-            return redirect('issue_tracker:index')
-        username = form.cleaned_data.get('username')
-        password = form.cleaned_data.get('password')
+            messages.error(request, "Некорректная форма")
+            return redirect("issue_tracker:index")
+        username = form.cleaned_data.get("username")
+        password = form.cleaned_data.get("password")
         user = authenticate(request, username=username, password=password)
         if not user:
-            messages.warning(request, 'Пользователь не найден')
-            return redirect('issue_tracker:index')
+            messages.warning(request, "Пользователь не найден")
+            return redirect("issue_tracker:index")
         login(request, user)
-        messages.success(request, 'Добро пожаловать')
-        next = request.GET.get('next')
+        messages.success(request, "Добро пожаловать")
+        next = request.GET.get("next")
         if next:
             return redirect(next)
-        return redirect('issue_tracker:index')
+        return redirect("issue_tracker:index")
 
 
 def logout_view(request):
     logout(request)
-    return redirect('issue_tracker:index')
+    return redirect("issue_tracker:index")
 
 
 class RegisterView(CreateView):
-    template_name = 'register.html'
+    template_name = "register.html"
     form_class = CustomUserCreationForm
-    success_url = '/'
+    success_url = "/"
 
     def post(self, request, *args, **kwargs):
         form = self.form_class(request.POST)
@@ -50,5 +50,5 @@ class RegisterView(CreateView):
             user = form.save()
             login(request, user)
             return redirect(self.success_url)
-        context = {'form': form}
+        context = {"form": form}
         return self.render_to_response(context)
